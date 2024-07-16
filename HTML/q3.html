@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Event Examples</title>
+<style>
+    #myDiv {
+        width: 200px;
+        height: 100px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    function onClickEventO() {
+        alert("Button Clicked!");
+    }
+    function onAbortEvent() {
+        alert("Image Loading Aborted!");
+    }
+    function onLoadEvent() {
+        alert("Page Loaded!");
+    }
+    function onMouseOverEvent() {
+        document.getElementById("myDiv").style.backgroundColor = "lightgreen";
+    }
+    function onMouseOutEvent() {
+        document.getElementById("myDiv").style.backgroundColor = "lightblue";
+    }
+    function onChangeEvent() {
+        var selectElement =
+            document.getElementById("mySelect");
+        alert("Selected Option: " + selectElement.value);
+    }
+    function onErrorEvent() {
+        alert("Error Loading Image!");
+    }
+</script>
+</head>
+
+<body onload="onLoadEvent()">
+    <button onclick="onClickEvent()">Click Me</button>
+    <br><br>
+    <img src="nonexistentimage.jpg" onerror="onErrorEvent()" onabort="onAbortEvent()" alt="Sample Image">
+    <br><br>
+    <div id="myDiv" onclick="onClickEvent()" onmouseover="onMouseOverEvent()" onmouseout="onMouseOutEvent()">
+        Hover Over Me
+    </div>
+    <br><br>
+    <label for="mySelect">Select a Option :</label>
+    <select id="mySelect" onchange="onChangeEvent()">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+</body>
+
+</html>

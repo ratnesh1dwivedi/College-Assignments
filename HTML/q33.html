@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+        function handleClick() {
+            alert("Button clicked!");
+        }
+
+        function handleAbort() {
+            alert("File upload aborted!");
+        }
+
+        function handleLoad() {
+            alert("Page loaded!");
+        }
+
+        function handleMouseOver() {
+            document.getElementById("myElement").style.backgroundColor = "red";
+        }
+
+        function handleMouseOut() {
+            document.getElementById("myElement").style.backgroundColor = "white";
+        }
+
+        function handleChange() {
+            alert("Value changed!");
+        }
+
+        function handleError() {
+            alert("An error occurred!");
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button onclick="handleClick()">Click Here</button>
+
+    <form>
+        <input type="file" onabort="handleAbort()"><br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <p id="myElement" onload="handleLoad()">This paragraph will trigger the onload event.</p>
+
+    <p id="myElement" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">Hover over this paragraph to change
+        the color.</p>
+
+    <label for="mySelect">Select a Option :</label>
+    <select onchange="handleChange()">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+    <br>
+    <img src="notexistingimage.jpg" onerror="handleError()" alt="Sample Image">
+
+</body>
+
+</html>

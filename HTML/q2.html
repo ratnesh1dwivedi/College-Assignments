@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology</title>
+</head>
+<style>
+    sup {
+        color: green;
+    }
+</style>
+<script>
+    let validateForm = () => {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+        let validUsername = 'ratnesh__dwivedi';
+        let validPassword = 'P@S5w0rD';
+        if (username === '' || password === '') {
+            alert('You forgot one of the required fields. Please try again.');
+        } else if (username !== validUsername || password !== validPassword) {
+            alert('Please enter a valid username and password.');
+        } else {
+            alert('Welcome ' + username);
+        }
+    }
+</script>
+
+<body>
+    <h2>Login Form</h2>
+    <form>
+        <label for="username">Username<sup>*</sup>:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password<sup>*</sup>:</label>
+        <input type="password" id="password" name="password">
+        <button type="button" onclick="validateForm()">Login</button>
+    </form>
+</body>
+
+</html>
